@@ -1,5 +1,5 @@
 <x-guest-layout>
-  <div class="container mx-auto p-8 bg-white dark:bg-gray-800 shadow-lg">
+<div class="container mx-auto p-8 bg-white dark:bg-gray-800 shadow-lg">
     <h3 class="text-gray-700 dark:text-gray-300 text-2xl font-medium">Checkout</h3>
     <div class="flex flex-col lg:flex-row mt-8">
         <div class="w-full lg:w-1/2 order-2">
