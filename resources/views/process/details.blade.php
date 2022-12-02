@@ -11,7 +11,7 @@
               <label class="text-gray-500 text-sm" for="count">{{$process->desc}}</label>
           </div>
           <div class="flex items-center mt-6">
-              <a href="{{route('home')}}" class="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">Kembali</a>
+              <a href="{{route('home')}}" class="px-8 py-2 bg-emerald-600 text-white text-sm font-medium rounded hover:bg-emerald-500 focus:outline-none focus:bg-emerald-500">Kembali</a>
           </div>
       </div>
   </div>

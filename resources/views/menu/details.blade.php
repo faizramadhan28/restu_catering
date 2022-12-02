@@ -27,7 +27,7 @@
                   <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
               </button>
             @else
-              <a href="{{route('login')}}" class="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">Order Sekarang</a>
+              <a href="{{route('login')}}" class="px-8 py-2 bg-emerald-600 text-white text-sm font-medium rounded hover:bg-emerald-500 focus:outline-none focus:bg-white">Order Sekarang</a>
               <a href="{{route('login')}}" class="mx-2 text-gray-600 border rounded-md p-2 hover:bg-gray-200 focus:outline-none">
                   <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
               </a>
@@ -45,11 +45,11 @@
           <div class="bg-white dark:bg-gray-800 w-72 mx-5 rounded-md shadow-md overflow-hidden">
             <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('/storage/img/{{$menu->image}}');">
               @if (Auth::check())
-                <button @click="cartOpen = true; cartApi('POST','{{route('cart.add',$menu->id).'?api_token='.Auth::user()->api_token}}')" class="mx-5 -mb-4 bg-blue-600 text-white hover:bg-blue-500 focus:bg-blue-500 p-2 rounded-full focus:outline-none">
+                <button @click="cartOpen = true; cartApi('POST','{{route('cart.add',$menu->id).'?api_token='.Auth::user()->api_token}}')" class="mx-5 -mb-4 bg-emerald-600 text-white hover:bg-emerald-500 focus:bg-emerald-500 p-2 rounded-full focus:outline-none">
                   <x-svg.cart-logo />
                 </button>
               @else
-                <a href="{{route('login')}}" class="mx-5 -mb-4 bg-blue-600 text-white hover:bg-blue-500 focus:bg-blue-500 p-2 rounded-full focus:outline-none">
+                <a href="{{route('login')}}" class="mx-5 -mb-4 bg-emerald-600 text-white hover:bg-emerald-500 focus:bg-emerald-500 p-2 rounded-full focus:outline-none">
                   <x-svg.cart-logo />
                 </a>
               @endif

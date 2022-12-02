@@ -87,7 +87,7 @@
                         <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
                         <span class="mx-2">Kembali</span>
                     </a>
-                    <button class="flex items-center px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    <button class="flex items-center px-3 py-2 bg-emerald-600 text-white text-sm font-medium rounded-md hover:bg-emerald-500 focus:outline-none focus:bg-blue-500">
                         <span>Payment</span>
                         <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     </button>
@@ -95,7 +95,7 @@
             </form>
         </div>
         <div class="w-full mb-8 flex-shrink-0 order-1 lg:w-1/2 lg:mb-0 lg:order-2 flex justify-end">
-            <div x-data="{ 
+            <div x-data="{
                 totalHarga: 0
             }" class="w-9/12">
                 <div class="border border-gray-600 rounded-md max-w-md w-full px-4 py-3 mb-5">

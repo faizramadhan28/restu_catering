@@ -58,7 +58,7 @@
               </x-slot>
           </x-dropdown>
             @else
-            <x-nav-link class="bg-blue-600 hover:bg-blue-500" :href="route('login')" >
+            <x-nav-link class="bg-emerald-600 hover:bg-emerald-500" :href="route('login')" >
                 {{ __('Login') }}
                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </x-nav-link>

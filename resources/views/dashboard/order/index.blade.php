@@ -3,7 +3,7 @@
       <div class="mx-auto sm:px-6 lg:px-8">
           <div class="py-4">
               <div class="text-2xl mb-14 leading-7 font-semibold text-gray-900 dark:text-white mx-auto sm:px-6 lg:px-8 flex flex-wrap justify-between items-center">
-                  <span>{{ __($title) }}</span>  
+                  <span>{{ __($title) }}</span>
               </div>
 
               <!-- Session Status -->
@@ -16,37 +16,37 @@
 
                 <table class="shadow-xl" id="datatable">
                     <thead class="dark:bg-gray-300 bg-gray-600">
-                        <tr class="text-gray-100 dark:text-gray-500">
+                        <tr class="text-gray-100 dark:text-gray-800">
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold">
+                            class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold">
                             No
                         </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold">
                                 USER ID
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold">
                                 Nama Penerima
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold">
                                 No Telp Penerima
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold text-center">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold text-center">
                                 Waktu Peletakan Pesanan
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold text-center">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold text-center">
                                 Bukti Pembayaran
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold text-center">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold text-center">
                                 Status
                             </th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-500 uppercase tracking-wider font-bold text-center">
+                                class="px-6 py-3 text-left text-xs leading-7 font-medium text-gray-100 dark:text-gray-800 uppercase tracking-wider font-bold text-center">
                                 Aksi
                             </th>
                         </tr>
@@ -55,25 +55,25 @@
                         @foreach ($orders as $key => $order)
                         <tr class="bg-white dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700">
                         <td class="px-6 py-4 text-wrap">
-                            <div class="text-sm text-gray-900 dark:text-gray-300">{{ ++$key }}</div>
+                            <div class="text-sm text-gray-900 dark:text-gray-900">{{ ++$key }}</div>
                         </td>
                             <td class="px-6 py-4 text-wrap">
-                                        <div class="text-sm text-gray-900 dark:text-gray-300">{{ $order->user_id }}</div>
+                                        <div class="text-sm text-gray-900 dark:text-gray-900">{{ $order->user_id }}</div>
                                     </td>
                             <td class="px-6 py-4 text-wrap">
-                                        <div class="text-sm text-gray-900 dark:text-gray-300">{{ $order->nama_penerima }}</div>
+                                        <div class="text-sm text-gray-900 dark:text-gray-900">{{ $order->nama_penerima }}</div>
                                     </td>
                             <td class="px-6 py-4 text-wrap">
-                                        <div class="text-sm text-gray-900 dark:text-gray-300">{{ $order->telp_penerima }}</div>
+                                        <div class="text-sm text-gray-900 dark:text-gray-900">{{ $order->telp_penerima }}</div>
                                     </td>
                                 <td class="px-6 py-4 text-wrap">
-                                    <div class="text-sm text-gray-900 dark:text-gray-300">{{ $order->waktu_kirim }}</div>
+                                    <div class="text-sm text-gray-900 dark:text-gray-900">{{ $order->waktu_kirim }}</div>
                                 </td>
                                 <td class="px-6 py-4 text-wrap">
-                                    <div class="text-sm text-gray-900 dark:text-gray-300">{{ $order->bukti_pembayaran ? 'Menunggu Konfirmasi' : 'Menunggu Pembayaran' }}</div>
+                                    <div class="text-sm text-gray-900 dark:text-gray-900">{{ $order->bukti_pembayaran ? 'Menunggu Konfirmasi' : 'Menunggu Pembayaran' }}</div>
                                 </td>
                                 <td class="px-6 py-4 text-wrap">
-                                    <div class="text-sm text-gray-900 dark:text-gray-300">
+                                    <div class="text-sm text-gray-900 dark:text-gray-900">
                                         @foreach ($statuses as $stat)
                                         @if ($stat->inisial == $order->status)
                                         {{ $stat->nama_status }}
@@ -94,7 +94,7 @@
                                                     </div>
                                                 </button>
                                             </x-slot>
-                                
+
                                             <x-slot name="content">
                                                 <x-dropdown-link :href="route('order.detail', $order->id)">
                                                     {{ __('Details') }}

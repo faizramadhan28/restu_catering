@@ -1,5 +1,5 @@
 <x-guest-layout>
-  <div class="container mx-auto p-8 bg-white dark:bg-gray-800 dark:text-gray-300 shadow-lg">
+  <div class="container mx-auto p-8 bg-white dark:bg-gray-800 shadow-lg">
 
     <div class="flex justify-between">
       <div class="flex items-center">
@@ -177,3 +177,4 @@
 
 </div>
 </x-guest-layout>
+
