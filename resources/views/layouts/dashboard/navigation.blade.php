@@ -14,16 +14,17 @@
         </div>
 
         <div class="pt-2 pb-3">
-            <x-responsive-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')" class="whitespace-nowrap">
-                {{ __('Daftar Menu') }}
+            <x-responsive-nav-link :href="route('order.index')" :active="request()->routeIs('order.index')" class="whitespace-nowrap">
+                {{ __('Pesanan Masuk') }}
             </x-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3">
-            <x-responsive-nav-link :href="route('order.index')" :active="request()->routeIs('order.index')" class="whitespace-nowrap">
-                {{ __('Daftar Orderan') }}
+            <x-responsive-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')" class="whitespace-nowrap">
+                {{ __('Katalog Menu') }}
             </x-responsive-nav-link>
         </div>
+
 
         <div class="pt-2 pb-3">
             <x-responsive-nav-link :href="route('admin.report')" :active="request()->routeIs('admin.report')" class="whitespace-nowrap">

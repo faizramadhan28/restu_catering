@@ -26,7 +26,7 @@ class OrderController extends Controller
     public function index()
     {
         return view('dashboard.order.index', [
-            'title' => 'Daftar Orderan',
+            'title' => 'Daftar Pesanan',
             'orders' => Order::all(),
             'statuses' => Status::all()
         ]);
