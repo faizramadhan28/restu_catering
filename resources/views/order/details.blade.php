@@ -1,5 +1,5 @@
 <x-guest-layout>
-  <div class="container mx-auto p-8 bg-white dark:bg-gray-800 shadow-lg">
+  <div class="container mx-auto p-8 bg-white dark:bg-gray-800 dark:text-gray-300 shadow-lg">
 
     <div class="flex justify-between">
       <div class="flex items-center">
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        @if ($type_pembayaran->inisial != 'COD' || !$bukti_pembayaran)
+        @if ($type_pembayaran->inisial != 'COD' && !$bukti_pembayaran)
         <div class="my-8 dark:text-gray-300 text-sm">Silahkan Lakukan Pembayaran Sebelum <span class="font-bold">{{$kadaluarsa}}</span></div>
 
         <form action="{{route('home.checkout.put', $id)}}" method="post" enctype="multipart/form-data">

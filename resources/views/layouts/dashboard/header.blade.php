@@ -1,9 +1,9 @@
-<header class="flex justify-between items-center py-4 px-6 bg-white dark:bg-gray-800 border-b-4 border-indigo-600">
+<header class="flex justify-between items-center py-4 px-6 bg-white dark:bg-gray-800 dark:text-gray-200 border-b-4 border-indigo-600">
     <div class="flex items-center">
 
         <div class="relative mx-4 lg:mx-0">
             <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
-                <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                <svg class="h-5 w-5 text-gray-300" viewBox="0 0 24 24" fill="none">
                     <path
                         d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -21,7 +21,7 @@
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button
-                    class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-200 dark:hover:border-gray-200 focus:outline-none transition duration-150 ease-in-out">
+                    class="flex items-center text-sm font-medium text-gray-300 hover:text-gray-500 hover:border-gray-300 dark:hover:text-gray-200 dark:hover:border-gray-200 focus:outline-none transition duration-150 ease-in-out">
                     <div>{{ Auth::user()->name }}</div>
 
                     <div class="ml-1">

@@ -1,6 +1,6 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800">
+<nav x-data="{ open: false }" class="bg-emerald-600 dark:bg-gray-800">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 my-5">
-        <a href="{{route('home')}}" class="w-full text-gray-700 dark:text-white md:text-center text-sm font-semibold cursor-pointer flex items-center">
+        <a href="{{route('home')}}" class="w-full text-gray-300 dark:text-white md:text-center text-sm font-semibold cursor-pointer flex items-center">
             <img src="{{asset('logo/namalogo.png')}}" class="block h-10 w-auto fill-current text-gray-600 text-wrap" />
         </a>
     </div>

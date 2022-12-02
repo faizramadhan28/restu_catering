@@ -1,15 +1,15 @@
 <header class="bg-emerald-600 dark:bg-gray-800 shadow-lg">
   <div class="container mx-auto px-6 py-3">
       <div class="flex items-center justify-evenly">
-        <div class="hidden w-full text-gray-600 md:flex md:items-center">
+        <div class="hidden w-full text-gray-300 md:flex md:items-center">
             <x-switch-theme class="mr-10"/>
         </div>
-        <a href="{{route('home')}}" class="ml-7 w-full text-gray-700 dark:text-white md:text-center text-sm font-semibold cursor-pointer flex items-center">
+        <a href="{{route('home')}}" class="ml-7 w-full text-gray-200 dark:text-white md:text-center text-sm font-semibold cursor-pointer flex items-center">
             <img src="{{asset('logo/namalogo.png')}}" class="w-48 h-24" />
         </a>
           <div class="flex items-center justify-end w-full">
             @if (Auth::check())
-            <button @click="cartOpen = !cartOpen" class="text-gray-600 dark:text-white focus:outline-none mx-4">
+            <button @click="cartOpen = !cartOpen" class="text-gray-200 dark:text-white focus:outline-none mx-4">
                 <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                     <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
@@ -18,7 +18,7 @@
             <x-dropdown class="mr-5" align="right" width="48">
               <x-slot name="trigger">
                   <button
-                      class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-200 dark:hover:border-gray-200 focus:outline-none transition duration-150 ease-in-out">
+                      class="flex items-center text-sm font-medium text-gray-200 hover:text-gray-100 hover:border-gray-300 dark:hover:text-gray-200 dark:hover:border-gray-200 focus:outline-none transition duration-150 ease-in-out">
                       <div>{{ Auth::user()->name }}</div>
 
                       <div class="ml-1">
