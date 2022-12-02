@@ -3,8 +3,8 @@
     <div class="mb-8 h-64 rounded-md overflow-hidden bg-cover bg-center shadow-lg" style="background-image: url('/slide/foto-makanan-hd.jpg')">
         <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
             <div class="px-10 max-w-3xl">
-                <h2 class="text-3xl text-white font-semibold">{{ config('app.name', 'Laravel') }}</h2>
-                <p class="mt-2 text-gray-200 text-shadow text-lg">Sebagai Platform Digital E-Catering Online, <b>{{ config('app.name', 'Laravel') }}</b> adalah platform dan media promosi untuk memasarkan catering dalam menjual produk atau jasanya dan memudahkan konsumen dalam mencari layanan.</p>
+                <h2 class="text-3xl text-white font-semibold">{{ config('app.name', 'Restu Catering') }}</h2>
+                <p class="mt-2 text-gray-200 text-shadow text-lg">Sebagai Platform Digital E-Catering Online, <b>{{ config('app.name', 'Restu Catering') }}</b> adalah platform dan media promosi untuk memasarkan catering dalam menjual produk atau jasanya dan memudahkan konsumen dalam mencari layanan.</p>
                 <br>
                 <a href="http://maps.google.com/?q=Jalan Kaswari, Way Hui, Kec. Jati Agung, Lampung Selatan" class="mt-2 text-gray-200 text-shadow text-lg">Jalan Kaswari, Way Hui, Kec. Jati Agung, Lampung Selatan</a>
                 <br>
@@ -12,8 +12,8 @@
             </div>
         </div>
     </div>
-    
-    
+
+
     <div class="mt-16">
       <h3 class="text-gray-600 text-2xl font-medium">Jenis Aneka Menu</h3>
         <div class="flex flex-wrap justify-around mt-8">
@@ -40,5 +40,6 @@
           @endforeach
         </div>
     </div>
+
 </div>
 </x-guest-layout>

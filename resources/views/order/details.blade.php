@@ -112,7 +112,7 @@
             })" class="relative w-2/6 flex flex-row" >
 
             <div class="absolute inset-y-0 left-3 z-10 flex items-center">
-              <button @click="swiper.slidePrev()" 
+              <button @click="swiper.slidePrev()"
                       class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
                 <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
               </button>
@@ -120,7 +120,7 @@
 
             <div class="swiper-container" x-ref="container">
               <div class="swiper-wrapper">
-                
+
                 @foreach ($lists as $list)
                 <div class="swiper-slide p-4">
                   <div class="flex flex-col rounded shadow-lg overflow-hidden">
@@ -135,12 +135,12 @@
                   </div>
                 </div>
                 @endforeach
-                
+
               </div>
             </div>
 
             <div class="absolute inset-y-0 right-3 z-10 flex items-center">
-              <button @click="swiper.slideNext()" 
+              <button @click="swiper.slideNext()"
                       class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
                 <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
               </button>
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        @if ($type_pembayaran->inisial != 'COD' && !$bukti_pembayaran)
+        @if ($type_pembayaran->inisial != 'COD' || !$bukti_pembayaran)
         <div class="my-8 dark:text-gray-300 text-sm">Silahkan Lakukan Pembayaran Sebelum <span class="font-bold">{{$kadaluarsa}}</span></div>
 
         <form action="{{route('home.checkout.put', $id)}}" method="post" enctype="multipart/form-data">
@@ -157,7 +157,7 @@
           @csrf
 
           <div class="w-full">
-              <x-forms.upload-image class="" :identifier="'imageBukti'" />   
+              <x-forms.upload-image class="" :identifier="'imageBukti'" />
           </div>
 
           <div class="flex justify-center my-12">

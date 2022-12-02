@@ -7,13 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-   
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!--Datatables -->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 

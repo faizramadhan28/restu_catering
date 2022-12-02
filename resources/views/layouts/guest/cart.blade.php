@@ -6,7 +6,7 @@
       </button>
   </div>
   <hr class="my-3">
-
+  
   <div id="cart-list">
     @foreach (App\Models\Cart::where('user_id', Auth::id())->get() as $cart)
     @php

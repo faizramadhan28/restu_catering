@@ -1,10 +1,10 @@
-<header class="bg-white dark:bg-gray-800 shadow-lg">
+<header class="bg-emerald-600 dark:bg-gray-800 shadow-lg">
   <div class="container mx-auto px-6 py-3">
-      <div class="flex items-center justify-between">
-          <div class="hidden w-full text-gray-600 md:flex md:items-center">
-              <x-switch-theme class="mr-10"/>
-          </div>
-          <a href="{{route('home')}}" class="w-full text-gray-700 dark:text-white md:text-center text-sm font-semibold cursor-pointer flex items-center">
+      <div class="flex items-center justify-evenly">
+        <div class="hidden w-full text-gray-600 md:flex md:items-center">
+            <x-switch-theme class="mr-10"/>
+        </div>
+        <a href="{{route('home')}}" class="ml-7 w-full text-gray-700 dark:text-white md:text-center text-sm font-semibold cursor-pointer flex items-center">
             <img src="{{asset('logo/namalogo.png')}}" class="w-48 h-24" />
         </a>
           <div class="flex items-center justify-end w-full">
@@ -20,7 +20,7 @@
                   <button
                       class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:hover:text-gray-200 dark:hover:border-gray-200 focus:outline-none transition duration-150 ease-in-out">
                       <div>{{ Auth::user()->name }}</div>
-  
+
                       <div class="ml-1">
                           <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                               <path fill-rule="evenodd"
@@ -30,7 +30,7 @@
                       </div>
                   </button>
               </x-slot>
-  
+
               <x-slot name="content">
                   @role('admin')
                   <x-dropdown-link :href="route('dashboard')">
@@ -45,11 +45,11 @@
                   <x-dropdown-link :href="route('home.order')">
                     {{ __('Pesanan') }}
                     </x-dropdown-link>
-  
+
                   <!-- Authentication -->
                   <form method="POST" action="{{ route('logout') }}">
                       @csrf
-  
+
                       <x-dropdown-link :href="route('logout')"
                           onclick="event.preventDefault();this.closest('form').submit();">
                           {{ __('Log Out') }}
@@ -61,7 +61,7 @@
             <x-nav-link class="bg-blue-600 hover:bg-blue-500" :href="route('login')" >
                 {{ __('Login') }}
                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </x-nav-link> 
+            </x-nav-link>
             @endif
 
           </div>

@@ -2,7 +2,7 @@
 <div class="container mx-auto px-6">
   <div class="md:flex md:items-center">
       <div class="w-full h-64 md:w-1/2 lg:h-96">
-          <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto" src="/storage/img/{{$menu->image}}" alt="Nike Air">
+          <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto" src="/storage/img/{{$menu->image}}" alt="">
       </div>
       <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
           <h3 class="text-gray-700 uppercase text-lg dark:text-gray-200 mb-3">{{$menu->menu}}</h3>
@@ -47,12 +47,12 @@
               @if (Auth::check())
                 <button @click="cartOpen = true; cartApi('POST','{{route('cart.add',$menu->id).'?api_token='.Auth::user()->api_token}}')" class="mx-5 -mb-4 bg-blue-600 text-white hover:bg-blue-500 focus:bg-blue-500 p-2 rounded-full focus:outline-none">
                   <x-svg.cart-logo />
-                </button> 
+                </button>
               @else
                 <a href="{{route('login')}}" class="mx-5 -mb-4 bg-blue-600 text-white hover:bg-blue-500 focus:bg-blue-500 p-2 rounded-full focus:outline-none">
                   <x-svg.cart-logo />
-                </a> 
-              @endif 
+                </a>
+              @endif
             </div>
             <div class="px-5 py-3 h-32">
               <div class="overflow-ellipsis overflow-hidden h-24">
