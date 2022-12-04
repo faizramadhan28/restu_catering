@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Menu;
+use App\Models\Langganan;
 use App\Models\Process;
 use App\Models\Type;
 use App\Models\Order;
@@ -24,6 +25,7 @@ class HomeController extends Controller
     {
         return view('welcome', [
             'menus' => Menu::all(),
+            'langganan' => Langganan::all(),
             'types' => Type::all(),
             'processes' => Process::all()
         ]);

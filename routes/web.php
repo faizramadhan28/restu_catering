@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KasController;
+use App\Http\Controllers\LanggananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,13 @@ Route::group(['middleware' => ['role:admin']], function () {
   Route::get('/menu/{id}/edit', [MenuController::class, 'edit'])->middleware(['auth'])->name('menu.edit');
   Route::patch('/menu/{id}', [MenuController::class, 'update'])->middleware(['auth'])->name('menu.update');
   Route::delete('/menu/{id}', [MenuController::class, 'destroy'])->middleware(['auth'])->name('menu.destroy');
+
+  Route::get('/menulangganan', [LanggananController::class, 'index'])->middleware(['auth'])->name('langganan.index');
+  Route::get('/menulangganan/create', [LanggananController::class, 'create'])->middleware(['auth'])->name('langganan.create');
+  Route::post('/menulangganan', [LanggananController::class, 'store'])->middleware(['auth'])->name('langganan.store');
+  Route::get('/menulangganan/{id}/edit', [LanggananController::class, 'edit'])->middleware(['auth'])->name('langganan.edit');
+  Route::patch('/menulangganan/{id}', [LanggananController::class, 'update'])->middleware(['auth'])->name('langganan.update');
+  Route::delete('/menulangganan/{id}', [LanggananController::class, 'destroy'])->middleware(['auth'])->name('langganan.destroy');
 
   Route::get('/jenis-olah', [TypeController::class, 'create'])->middleware(['auth'])->name('type.create');
   Route::post('/jenis-olah', [TypeController::class, 'store'])->middleware(['auth'])->name('type.store');

@@ -25,6 +25,12 @@
             </x-responsive-nav-link>
         </div>
 
+        <div class="pt-2 pb-3">
+            <x-responsive-nav-link :href="route('langganan.index')" :active="request()->routeIs('langganan.index')" class="whitespace-nowrap">
+                {{ __(' Katalog Menu Langganan') }}
+            </x-responsive-nav-link>
+        </div>
+
 
         <div class="pt-2 pb-3">
             <x-responsive-nav-link :href="route('admin.report')" :active="request()->routeIs('admin.report')" class="whitespace-nowrap">

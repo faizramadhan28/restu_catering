@@ -41,5 +41,32 @@
         </div>
     </div>
 
+    <div class="mt-16">
+      <h3 class="text-gray-600 text-2xl font-medium">Menu Langganan</h3>
+        <div class="flex flex-wrap justify-around mt-8">
+          @foreach ($langganan as $item)
+          <div class="w-5/12 h-36 rounded-md overflow-hidden mb-8 flex relative">
+            @if (Auth::check())
+              <button @click="cartOpen = true; cartApi('POST','{{route('cart.add',$item->id).'?api_token='.Auth::user()->api_token}}')" class="absolute bottom-0 right-0 p-2 rounded-l-full hover:w-12 bg-emerald-600 text-white hover:bg-emerald-500 focus:outline-none focus:bg-emerlad-600 cursor-pointer">
+                <x-svg.cart-logo />
+              </button>
+            @else
+              <a href="{{route('login')}}" class="absolute bottom-0 right-0 p-2 rounded-l-full hover:w-12 bg-emerald-600 text-white hover:bg-emerald-500 focus:outline-none focus:bg-emerald-500 cursor-pointer">
+                <x-svg.cart-logo />
+              </a>
+            @endif
+
+            <img class="w-2/6" src="/storage/img/{{$item->image}}" alt="">
+            <div class="bg-white dark:bg-gray-800 h-full w-full px-5 py-3">
+              <div class="w-9/12 overflow-ellipsis overflow-hidden text-gray-700 dark:text-gray-200">
+                <a href="{{route('home.menu',$item->id)}}" class="text-xs text-gray-700 dark:text-gray-200">{{$item->menu}}</a>
+                <h2 class="font-semibold text-gray-800 dark:text-gray-100 mt-5">Rp. {{$item->harga}}</h2>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+    </div>
+
 </div>
 </x-guest-layout>
