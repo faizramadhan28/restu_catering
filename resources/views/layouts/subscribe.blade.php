@@ -52,7 +52,7 @@
     @include('layouts.guest.header')
 
     @if (Auth::check())
-        @include('layouts.guest.cart')
+        @include('layouts.guest.cartsubs')
     @endif
 
 
@@ -74,15 +74,7 @@
             }
             return x1 + x2;
         }
-        function cartApi(method,url,callback) {
-            fetch(url,{method:method}).then(async (result) => {
-              if (result.status == 200) return await result.text()
-            }).then(async (result) => {
-              $('#cart-list').html(result);
-            }).catch((err) => console.log(err));
-            if (typeof callback == 'function') return callback();
-            return;
-        }
+
         function subsApi(method,url,callback) {
             fetch(url,{method:method}).then(async (result) => {
               if (result.status == 200) return await result.text()

@@ -30,6 +30,7 @@ use App\Http\Controllers\HomeLanggananController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/langganan', [HomeLanggananController::class, 'index'])->name('langganan');
 Route::get('/detail-menu/{id}', [MenuController::class, 'show'])->name('home.menu');
 Route::get('/detail-product/{id}', [OlahanController::class, 'show'])->name('home.product');
 

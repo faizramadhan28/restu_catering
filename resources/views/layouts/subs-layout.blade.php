@@ -49,10 +49,10 @@
 </head>
 
 <body class="font-sans antialiased bg-gray-200 dark:bg-gray-900" x-data="{ flashMessage : true, cartOpen: false, qty: 1 }" x-init="() => {switchTheme(localStorage.getItem('theme'))}">
-    @include('layouts.guest.header')
+    @include('layouts.subs-layout.header')
 
     @if (Auth::check())
-        @include('layouts.guest.cart')
+        @include('layouts.subs-layout.cartsubs')
     @endif
 
 
@@ -60,7 +60,7 @@
         {{ $slot }}
     </main>
 
-    @include('layouts.guest.footer')
+    @include('layouts.subs-layout.footer')
 
     <script>
         function addDots(nStr) {
@@ -74,15 +74,7 @@
             }
             return x1 + x2;
         }
-        function cartApi(method,url,callback) {
-            fetch(url,{method:method}).then(async (result) => {
-              if (result.status == 200) return await result.text()
-            }).then(async (result) => {
-              $('#cart-list').html(result);
-            }).catch((err) => console.log(err));
-            if (typeof callback == 'function') return callback();
-            return;
-        }
+
         function subsApi(method,url,callback) {
             fetch(url,{method:method}).then(async (result) => {
               if (result.status == 200) return await result.text()
