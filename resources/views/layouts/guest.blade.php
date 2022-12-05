@@ -51,6 +51,10 @@
 <body class="font-sans antialiased bg-gray-200 dark:bg-gray-900" x-data="{ flashMessage : true, cartOpen: false, qty: 1 }" x-init="() => {switchTheme(localStorage.getItem('theme'))}">
     @include('layouts.guest.header')
     @if (Auth::check())
+        @include('layouts.guest.cartsubs')
+    @endif
+
+    @if (Auth::check())
         @include('layouts.guest.cart')
     @endif
 

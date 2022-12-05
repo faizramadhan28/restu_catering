@@ -234,14 +234,6 @@ class OrderLanggananController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $validated = Validator::make(['id' => $id], [
-            'id' => 'required|exists:orders,id|max:255'
-        ], [
-            'id.exists' => 'Orderan tidak di temukan.'
-        ]);
-
-        if ($validated->fails()) return redirect()->route('subs.order')->withErrors($validated)->withInput();
-
         $order = OrderLangganan::find($id);
         if ($order->bukti_pembayaran) {
             Storage::delete("public/struct/$order->bukti_pembayaran");

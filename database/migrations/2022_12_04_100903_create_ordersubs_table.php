@@ -24,7 +24,6 @@ class CreateOrdersubsTable extends Migration
             $table->longText('pesanan');
             $table->string('type_pembayaran');
             $table->string('type_pengiriman');
-            $table->string('durasi');
             $table->dateTime('kadaluarsa');
             $table->string('bukti_pembayaran')->nullable();
             $table->string('status');
