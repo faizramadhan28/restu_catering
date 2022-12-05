@@ -14,6 +14,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KasController;
 use App\Http\Controllers\LanggananController;
+use App\Http\Controllers\OrderLanggananController;
+use App\Http\Controllers\CartLanggananController;
+use App\Http\Controllers\HomeLanggananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +37,17 @@ Route::get('/checkout', [CartController::class, 'index'])->middleware(['auth'])-
 Route::post('/checkout', [OrderController::class, 'store'])->middleware(['auth'])->name('home.checkout.post');
 Route::patch('/checkout/{id}', [OrderController::class, 'updateBuktiBayar'])->middleware(['auth'])->name('home.checkout.put');
 
+Route::get('/subs-checkout', [CartLanggananController::class, 'index'])->middleware(['auth'])->name('subs.checkout');
+Route::post('/subs-checkout', [OrderLanggananController::class, 'store'])->middleware(['auth'])->name('subs.checkout.post');
+Route::patch('/subs-checkout/{id}', [OrderLanggananController::class, 'updateBuktiBayar'])->middleware(['auth'])->name('subs.checkout.put');
+
 Route::get('/order', [HomeController::class, 'showOrder'])->middleware(['auth'])->name('home.order');
 Route::get('/order/{id}', [HomeController::class, 'detailOrder'])->middleware(['auth'])->name('home.order.detail');
 Route::delete('/order/{id}', [OrderController::class, 'destroy'])->middleware(['auth'])->name('home.order.destroy');
+
+Route::get('/order-subs', [HomeLanggananController::class, 'showOrder'])->middleware(['auth'])->name('subs.order');
+Route::get('/order-subs/{id}', [HomeLanggananController::class, 'detailOrder'])->middleware(['auth'])->name('subs.order.detail');
+Route::delete('/order-subs/{id}', [OrderLanggananController::class, 'destroy'])->middleware(['auth'])->name('subs.order.destroy');
 
 Route::get('/profile', [UserController::class, 'index'])->middleware(['auth'])->name('profile');
 
@@ -60,6 +71,10 @@ Route::group(['middleware' => ['role:admin']], function () {
   Route::get('/order-list', [OrderController::class, 'index'])->middleware(['auth'])->name('order.index');
   Route::get('/order-list/{id}', [OrderController::class, 'show'])->middleware(['auth'])->name('order.detail');
   Route::post('/order-list/{id}', [OrderController::class, 'update'])->middleware(['auth'])->name('order.update');
+
+  Route::get('/order-langganan', [OrderLanggananController::class, 'index'])->middleware(['auth'])->name('ordersubs.index');
+  Route::get('/order-langganan/{id}', [OrderLanggananController::class, 'show'])->middleware(['auth'])->name('ordersubs.detail');
+  Route::post('/order-langganan/{id}', [OrderLanggananController::class, 'update'])->middleware(['auth'])->name('ordersubs.update');
 
   Route::get('/menu', [MenuController::class, 'index'])->middleware(['auth'])->name('menu.index');
   Route::get('/menu/create', [MenuController::class, 'create'])->middleware(['auth'])->name('menu.create');

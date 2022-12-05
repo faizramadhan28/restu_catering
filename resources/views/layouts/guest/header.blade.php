@@ -45,6 +45,10 @@
                   <x-dropdown-link :href="route('home.order')">
                     {{ __('Pesanan') }}
                     </x-dropdown-link>
+                  
+                  <x-dropdown-link :href="route('subs.order')">
+                    {{ __('Berlangganan') }}
+                    </x-dropdown-link>
 
                   <!-- Authentication -->
                   <form method="POST" action="{{ route('logout') }}">

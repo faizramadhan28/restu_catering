@@ -20,6 +20,12 @@
         </div>
 
         <div class="pt-2 pb-3">
+            <x-responsive-nav-link :href="route('ordersubs.index')" :active="request()->routeIs('ordersubs.index')" class="whitespace-nowrap">
+                {{ __('Pesanan Masuk Langganan') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3">
             <x-responsive-nav-link :href="route('menu.index')" :active="request()->routeIs('menu.index')" class="whitespace-nowrap">
                 {{ __('Katalog Menu') }}
             </x-responsive-nav-link>

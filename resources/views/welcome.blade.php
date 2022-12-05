@@ -47,9 +47,10 @@
           @foreach ($langganan as $item)
           <div class="w-5/12 h-36 rounded-md overflow-hidden mb-8 flex relative">
             @if (Auth::check())
-              <button @click="cartOpen = true; cartApi('POST','{{route('cart.add',$item->id).'?api_token='.Auth::user()->api_token}}')" class="absolute bottom-0 right-0 p-2 rounded-l-full hover:w-12 bg-emerald-600 text-white hover:bg-emerald-500 focus:outline-none focus:bg-emerlad-600 cursor-pointer">
+              <button @click="cartOpen = true; subsApi('POST','{{route('cartsubs.add',$item->id).'?api_token='.Auth::user()->api_token}}')" class="absolute bottom-0 right-0 p-2 rounded-l-full hover:w-12 bg-emerald-600 text-white hover:bg-emerald-500 focus:outline-none focus:bg-emerlad-600 cursor-pointer">
                 <x-svg.cart-logo />
               </button>
+  
             @else
               <a href="{{route('login')}}" class="absolute bottom-0 right-0 p-2 rounded-l-full hover:w-12 bg-emerald-600 text-white hover:bg-emerald-500 focus:outline-none focus:bg-emerald-500 cursor-pointer">
                 <x-svg.cart-logo />

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartLanggananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->post('/cart/{id}', [CartController::class, 'store'])->name('cart.add');
 Route::middleware('auth:api')->put('/cart/{id}', [CartController::class, 'update'])->name('cart.more');
 Route::middleware('auth:api')->delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.less');
+
+Route::middleware('auth:api')->post('/cart-langganan/{id}', [CartLanggananController::class, 'store'])->name('cartsubs.add');
+Route::middleware('auth:api')->put('/cart-langganan/{id}', [CartLanggananController::class, 'update'])->name('cartsubs.more');
+Route::middleware('auth:api')->delete('/cart-langganan/{id}', [CartLanggananController::class, 'destroy'])->name('cartsubs.less');
