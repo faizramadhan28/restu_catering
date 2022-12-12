@@ -80,42 +80,28 @@
                         spaceBetween: 0,
                       },
                     },
-                  })" class="relative w-2/6 flex flex-row" >
+                  })" class="relative w-full flex flex-row" >
 
-                  <div class="absolute inset-y-0 left-3 z-10 flex items-center">
-                    <button @click="swiper.slidePrev()"
-                            class="bg-white -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                    </button>
-                  </div>
-
-                  <div class="swiper-container" x-ref="container">
-                    <div class="swiper-wrapper">
-
-                      @foreach ($lists as $list)
-                      <div class="swiper-slide p-4">
-                        <div class="flex flex-col rounded shadow-lg overflow-hidden">
-                          <div class="flex-shrink-0">
-                            <img class="h-48 w-full object-cover" src="/storage/img/{{$list->menu->image}}" alt="">
-                            <div class="p-4">
-                              <p class="font-semibold mb-4 text-gray-700 dark:text-gray-200">{{$list->menu->menu}}</p>
-                              <p class="text-gray-500">Rp. {{$list->menu->harga}}</p>
-                              <p class="text-gray-500">Qty. {{$list->qty}}</p>
+                  <div class="w-full mb-8 flex-shrink-0 order-1 lg:mb-0 lg:order-2 flex justify-end">
+                    <div x-data="{
+                        totalHarga: 0
+                    }" class="w-full">
+                        <div class="border border-gray-600 rounded-md max-w-md w-full px-4 py-3 mb-5">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-gray-700 dark:text-gray-300 font-medium">Total Pesanan</h3>
                             </div>
-                          </div>
+                            @foreach ($lists as $list)
+                              <div class="flex w-full m-4">
+                                  <img class="h-20 w-20 object-cover rounded" src="/storage/img/{{ $list->menu->image }}" alt="">
+                                  <div class="mx-3 flex flex-col w-full">
+                                      <h3 class="font-semibold mb-4 text-gray-700 dark:text-gray-200">{{ $list->menu->menu }}</h3>
+                                      <p class="font-mediu text-sm mb-4 text-gray-500 dark:text-gray-200">Jumlah : {{ $list->qty }}</p>
+                                  </div>
+                              </div>
+                            @endforeach
                         </div>
-                      </div>
-                      @endforeach
-
                     </div>
-                  </div>
-
-                  <div class="absolute inset-y-0 right-3 z-10 flex items-center">
-                    <button @click="swiper.slideNext()"
-                            class="bg-white -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full shadow focus:outline-none">
-                      <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                    </button>
-                  </div>
+                </div>
 
                 </div>
               </div>
