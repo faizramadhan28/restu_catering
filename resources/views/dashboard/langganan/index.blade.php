@@ -6,7 +6,7 @@
                     <span>{{ __($title) }}</span>
                     <x-nav-link class="ml-3 bg-blue-600 hover:bg-blue-500" :href="route('langganan.create')" :active="request()->routeIs('langganan.create')">
                         {{ __('Tambah Menu Langganan') }}
-                    </x-nav-link>   
+                    </x-nav-link>
                 </div>
 
                 <!-- Session Status -->
@@ -64,7 +64,7 @@
                                 <td class="px-6 py-4 text-wrap">
                                             <div class="text-sm text-gray-900 dark:text-gray-300">{{ $item->harga }}</div>
                                         </td>
-                                
+
                                         <td class="px-6 py-4 text-wrap">
                                             <x-dropdown align="right" width="48">
                                                 <x-slot name="trigger">
@@ -77,7 +77,7 @@
                                                         </div>
                                                     </button>
                                                 </x-slot>
-                                    
+
                                                 <x-slot name="content">
                                                     <x-dropdown-link :href="route('langganan.edit', $item->id)">
                                                         {{ __('Edit') }}
@@ -86,7 +86,7 @@
                                                         @method('DELETE')
                                                         @csrf
                                                         <x-dropdown-link :href="route('langganan.destroy', $item->id)"
-                                                            onclick="event.preventDefault();this.closest('form').submit();">
+                                                            onclick="myFunction()" id="target">
                                                             {{ __('Hapus') }}
                                                         </x-dropdown-link>
                                                     </form>
@@ -102,4 +102,14 @@
             </div>
         </div>
     </div>
+    @push('after-script')
+    <script>
+        function myFunction(){
+            if (confirm("Apakah anda yakin?")==true){
+                event.preventDefault();
+                $('#target').closest('form').submit();
+            }
+        }
+    </script>
+    @endpush
 </x-app-layout>

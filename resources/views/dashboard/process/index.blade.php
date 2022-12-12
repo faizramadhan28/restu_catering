@@ -6,7 +6,7 @@
                     <span>{{ __($title) }}</span>
                     <x-nav-link class="ml-3 bg-blue-600 hover:bg-blue-500" :href="route('type.create')" :active="request()->routeIs('type.create')">
                         {{ __('Tambah Aneka Olahan') }}
-                    </x-nav-link>   
+                    </x-nav-link>
                 </div>
 
                 <!-- Session Status -->
@@ -45,7 +45,7 @@
                                             @method('DELETE')
                                             @csrf
                                             <x-dropdown-link :href="route('type.destroy', $type->id)"
-                                                onclick="event.preventDefault();this.closest('form').submit();">
+                                                onclick="myFunction()" id="target">
                                                 {{ __('Hapus') }}
                                             </x-dropdown-link>
                                         </form>
@@ -106,7 +106,7 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <x-dropdown-link :href="route('process.destroy', $process->id)"
-                                                                    onclick="event.preventDefault();this.closest('form').submit();">
+                                                                    onclick="myFunction()" id="target">
                                                                     {{ __('Hapus') }}
                                                                 </x-dropdown-link>
                                                             </form>
@@ -117,7 +117,7 @@
                                         @endif
                                     @endforeach
                                 </tbody>
-                            </table>  
+                            </table>
                         </div>
                     @endforeach
 
@@ -125,4 +125,14 @@
             </div>
         </div>
     </div>
+    @push('after-script')
+    <script>
+        function myFunction(){
+            if (confirm("Apakah anda yakin?")==true){
+                event.preventDefault();
+                $('#target').closest('form').submit();
+            }
+        }
+    </script>
+    @endpush
 </x-app-layout>

@@ -63,15 +63,15 @@
                                 <td class="px-6 py-4 text-wrap">
                                             <div class="text-sm text-gray-900 dark:text-gray-300">{{ $item->tgl_transaksi }}</div>
                                         </td>
-                                
+
                                 <td class="px-6 py-4 text-wrap">
                                             <img src="/storage/kas/{{ $item->foto }}" class="h-48 w-48">
                                         </td>
                                 <td class="px-6 py-4 text-wrap">
                                   <div class="text-sm text-gray-900 dark:text-gray-300 text-right" x-data={} x-init="$nextTick(() => $parent.totalPendapatan = $parent.totalPendapatan + {{ $item->uang_keluar }})"> Rp. {{ $item->uang_keluar }}</div>
                                 </td>
-                                
-                                
+
+
                                         <td class="px-6 py-4 text-wrap">
                                             <x-dropdown align="right" width="48">
                                                 <x-slot name="trigger">
@@ -84,7 +84,7 @@
                                                         </div>
                                                     </button>
                                                 </x-slot>
-                                    
+
                                                 <x-slot name="content">
                                                     <x-dropdown-link :href="route('kas.edit', $item->id)">
                                                         {{ __('Edit') }}
@@ -93,7 +93,7 @@
                                                         @method('DELETE')
                                                         @csrf
                                                         <x-dropdown-link :href="route('kas.destroy', $item->id)"
-                                                            onclick="event.preventDefault();this.closest('form').submit();">
+                                                            onclick="myFunction()" id="target">
                                                             {{ __('Hapus') }}
                                                         </x-dropdown-link>
                                                     </form>
@@ -119,4 +119,14 @@
             </div>
         </div>
     </div>
+    @push('after-script')
+    <script>
+        function myFunction(){
+            if (confirm("Apakah anda yakin?")==true){
+                event.preventDefault();
+                $('#target').closest('form').submit();
+            }
+        }
+    </script>
+    @endpush
 </x-app-layout>

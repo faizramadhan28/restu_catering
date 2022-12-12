@@ -55,11 +55,14 @@
         </main>
     </div>
 
+    @stack('page-script')
+
     <script>
         $(document).ready(function() {
             var table = $('#datatable').DataTable();
         });
     </script>
+    @stack('after-script')
+    
 </body>
-
 </html>
