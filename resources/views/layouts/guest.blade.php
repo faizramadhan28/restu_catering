@@ -27,7 +27,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!--Datatables -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
     <!--Responsive Extension Datatables CSS-->
