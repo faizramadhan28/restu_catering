@@ -164,13 +164,6 @@ class LanggananController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $validated = Validator::make(['id' => $id], [
-            'id' => 'required|exists:menus,id|max:255'
-        ], [
-            'id.exists' => 'Menu Olahan tidak di temukan.'
-        ]);
-
-        if ($validated->fails()) return redirect()->route('langganan.index', $id)->withErrors($validated)->withInput();
 
         $langganan = Langganan::find($id);
         Storage::delete("public/img/$langganan->image");

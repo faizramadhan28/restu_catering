@@ -158,14 +158,7 @@ class MenuController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $validated = Validator::make(['id' => $id], [
-            'id' => 'required|exists:menus,id|max:255'
-        ], [
-            'id.exists' => 'Menu Olahan tidak di temukan.'
-        ]);
-
-        if ($validated->fails()) return redirect()->route('menu.index', $id)->withErrors($validated)->withInput();
-
+ 
         $mnu = Menu::find($id);
         Storage::delete("public/img/$mnu->image");
 

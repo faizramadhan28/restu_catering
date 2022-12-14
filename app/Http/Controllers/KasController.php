@@ -153,13 +153,6 @@ class KasController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $validated = Validator::make(['id' => $id], [
-            'id' => 'required|exists:menus,id|max:255'
-        ], [
-            'id.exists' => 'Kas tidak di temukan.'
-        ]);
-
-        if ($validated->fails()) return redirect()->route('kas.index', $id)->withErrors($validated)->withInput();
 
         $kas = Kas::find($id);
         Storage::delete("public/kas/$kas->foto");
